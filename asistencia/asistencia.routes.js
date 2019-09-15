@@ -11,7 +11,7 @@ module.exports = (app) => {
 
     app.get('/asistencias/:sede', asistencias.getAsistencias);
 
-    app.get('/asistencias/:asistenciaId', asistencias.findOne);
+    //app.get('/asistencias/:asistenciaId', asistencias.findOne);
 
     app.post('/asistencias/validar/', asistencias.findUser);
 
