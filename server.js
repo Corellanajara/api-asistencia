@@ -21,8 +21,7 @@ const config = require('./config.js');
 const mongoose = require('mongoose');
 
 require('./usuario/usuario.routes.js')(app);
-require('./oferta/oferta.routes.js')(app);
-require('./solicitud/solicitud.routes.js')(app);
+require('./asistencia/asistencia.routes.js')(app);
 mongoose.Promise = global.Promise;
 
 mongoose.connect(config.url, {
@@ -35,7 +34,7 @@ mongoose.connect(config.url, {
 });
 
 app.get('/', (req, res) => {
-    res.json({"message": "APi Bolsa de materiales"});
+    res.json({"message": "APi Protección y Amparo Asistencia"});
 });
 
 app.listen(config.serverport, () => {

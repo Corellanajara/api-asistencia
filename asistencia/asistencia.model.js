@@ -1,0 +1,9 @@
+const mongoose = require('mongoose');
+
+const sucursalSchema = mongoose.Schema({
+  userId : String,  
+}, {
+    timestamps: true
+  });
+
+module.exports = mongoose.model('asistencias', sucursalSchema);
