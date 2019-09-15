@@ -109,6 +109,8 @@ exports.today = (req, res) => {
 
   var end = new Date();
   end.setHours(23,59,59,999);
+  console.log(start);
+  console.log(end);
   Asistencia.find({created_on: {$gte: start, $lt: end}})
     .then(asistencias =>{
       if(!asistencias) {
