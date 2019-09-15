@@ -4,8 +4,8 @@ module.exports = (app) => {
     app.post('/asistencias', asistencias.create);
 
     app.get('/asistencias', asistencias.findAll);
-    
-    app.get("/asistencias/hoy",asistencia.today);
+
+    app.get("/asistencias/hoy",asistencias.today);
     //app.get('/asistencias/:userId', asistencias.setAsistencia);
 
     app.get('/asistencias/:sede/:userId', asistencias.setAsistencia);
