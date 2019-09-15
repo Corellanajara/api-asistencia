@@ -103,6 +103,22 @@ exports.findUser = (req, res) => {
         });
     });
 };
+exports.today = (req, res) => {
+  var start = new Date();
+  start.setHours(0,0,0,0);
+
+  var end = new Date();
+  end.setHours(23,59,59,999);
+  Asistencia.find({created_on: {$gte: start, $lt: end}})
+    .then(asistencias =>{
+      if(!asistencias) {
+          return res.status(404).send({
+              message: "No se encontro info para hoy "
+          });
+      }
+      res.send(asistencias);
+    })
+}
 // Find a single Asistencia with a AsistenciaId
 exports.findOne = (req, res) => {
     Asistencia.findById(req.params.AsistenciaId)
