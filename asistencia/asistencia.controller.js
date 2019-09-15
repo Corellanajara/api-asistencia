@@ -39,6 +39,7 @@ exports.create = (req, res) => {
 exports.setAsistencia = (req,res)=>{
   const asistencia = new Asistencia({
     userId : req.params.userId,
+    sede : req.params.sede
   });
   asistencia.save()
   .then(data => {

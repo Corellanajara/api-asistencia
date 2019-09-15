@@ -5,7 +5,9 @@ module.exports = (app) => {
 
     app.get('/asistencias', asistencias.findAll);
 
-    app.get('/asistencias/:userId', asistencias.setAsistencia);
+    //app.get('/asistencias/:userId', asistencias.setAsistencia);
+
+    app.get('/asistencias/:sede/:userId', asistencias.setAsistencia);
 
     app.get('/asistencias/:asistenciaId', asistencias.findOne);
 

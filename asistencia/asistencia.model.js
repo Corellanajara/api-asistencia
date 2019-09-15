@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const sucursalSchema = mongoose.Schema({
-  userId : String,  
+  userId : String,
+  sede : String,  
 }, {
     timestamps: true
   });
