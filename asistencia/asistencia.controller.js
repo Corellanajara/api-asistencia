@@ -61,6 +61,16 @@ exports.findAll = (req, res) => {
         });
     });
 };
+exports.getAsistencias = (req,res)=>{
+  Asistencia.find({sede:req.params.sede})
+  .then(Asistencias => {
+    res.send(Asistencias);
+  }).catch(err => {
+      res.status(500).send({
+          message: err.message || "Error en traer las Asistenciaes."
+      });
+  });
+}
 exports.findByRol = (req, res) => {
     Asistencia.find({Rol:req.params.AsistenciaId})
     .then(Asistenciaes => {
